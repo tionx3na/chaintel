@@ -1,2 +1,2 @@
-# chaintel
-Crypto on-chain data aggregator
+# ChainTel
+An android application for crypto on-chain data.
