@@ -22,6 +22,11 @@ class _HomePage extends State<HomePage> {
       appBar: appBarHome(),
       body: Container(
         //decoration: BoxDecoration(gradient: LinearGradient(colors: [Color(0xFF2BD3C0),Color(0xFF983590)],begin: Alignment.bottomCenter,end: Alignment.topCenter), ),
+        child: Column(
+          children: [
+            Center(child:Image.asset('assets/images/logo.png', width: 250,height: 250,))
+          ],
+        ),
       ),
     );
   }
