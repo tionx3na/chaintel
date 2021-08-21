@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -54,14 +52,29 @@ class _HomePage extends State<HomePage> {
                         right: 0,
                         bottom: 0,
                       child: Container(
-                        //color: Colors.black,
+                        color: Colors.white,
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
                               Container(
-                                margin: EdgeInsets.only(top: 85, bottom: 0),
-                                height: 50,
-                                child: Text("WELCOME", style: TextStyle(color: Color(0xFF2BD3C0), fontSize: 40.0,  fontWeight: FontWeight.w800,),) //Row(
+                                //color: Color(0xFFC3FCF2),
+                                width: 500,
+                                margin: EdgeInsets.only(top: 10, bottom: 0),
+                                height: 145,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFF2BD3C0),
+                                  image: DecorationImage(
+                                      image: AssetImage("assets/images/app_bar.jpg"),
+                                      fit: BoxFit.cover,
+                                      colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.2), BlendMode.dstATop),
+                                      )
+                                ),
+                                child: Center(
+                                  child: Container(
+                                  margin: EdgeInsets.only(top: 70, bottom: 10),
+                                  child: Text("WELCOME",style: TextStyle(color: Colors.white, fontSize: 40.0,  fontWeight: FontWeight.w800,),)
+                                  )
+                                 //Row(
                                 //     mainAxisSize: MainAxisSize.min,
                                 //     children: <Widget>[
                                 //       const SizedBox(width: 20.0, height: 100.0),
@@ -87,6 +100,7 @@ class _HomePage extends State<HomePage> {
                                 //       ),
                                 //     ],
                                 //   )
+                                )
                               ),
                               Card(
                                 semanticContainer: true,
@@ -104,7 +118,22 @@ class _HomePage extends State<HomePage> {
                                     )
                                   ),
                                   //child: Image.asset('assets/images/first_card.jpg'),
-                                  
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Container(
+                                            margin: EdgeInsets.all(10.0),
+                                            child: Text("Bitcoin", style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 26.0,
+                                              fontWeight: FontWeight.w700
+                                              ),)
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                               Card(
