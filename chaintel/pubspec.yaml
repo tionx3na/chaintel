@@ -45,18 +45,13 @@ dev_dependencies:
 flutter:
   assets:
     - assets/images/
-    - assets/fonts/static
+    - assets/fonts/static/
 
   fonts:
     - family: Raleway
       fonts:
-        - asset: fonts/static/Raleway-Black.ttf
-        - asset: fonts/static/Raleway-Medium.ttf
-
-    - family: DancingScript
-      fonts:
-        - asset: fonts/static/DancingScript-Regular.ttf
-        - asset: fonts/static/Dancing Script-Medium.ttf
+        - asset: assets/fonts/static/Raleway-Black.ttf
+        - asset: assets/fonts/static/Raleway-Medium.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:
