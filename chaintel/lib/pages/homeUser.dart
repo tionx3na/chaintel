@@ -58,6 +58,36 @@ class _HomePage extends State<HomePage> {
                         child: SingleChildScrollView(
                           child: Column(
                             children: [
+                              Container(
+                                margin: EdgeInsets.only(top: 85, bottom: 0),
+                                height: 50,
+                                child: Text("WELCOME", style: TextStyle(color: Color(0xFF2BD3C0), fontSize: 40.0,  fontWeight: FontWeight.w800,),) //Row(
+                                //     mainAxisSize: MainAxisSize.min,
+                                //     children: <Widget>[
+                                //       const SizedBox(width: 20.0, height: 100.0),
+                                //       DefaultTextStyle(
+                                //         style: const TextStyle(
+                                //           fontSize: 40.0,
+                                //           fontWeight: FontWeight.w800,
+                                //           color: Color(0xFF00BED7),
+                                //           fontFamily: 'Horizon',
+                                //         ),
+                                //         child: AnimatedTextKit(
+                                //           repeatForever: true,
+                                //           isRepeatingAnimation: true,
+                                //           animatedTexts: [
+                                //             RotateAnimatedText('WELCOME'),
+                                //             RotateAnimatedText('TO'),
+                                //             RotateAnimatedText('CHAINTEL'),
+                                //           ],
+                                //           onTap: () {
+                                //             print("Tap Event");
+                                //           },
+                                //         ),
+                                //       ),
+                                //     ],
+                                //   )
+                              ),
                               Card(
                                 semanticContainer: true,
                                 clipBehavior: Clip.antiAliasWithSaveLayer,
