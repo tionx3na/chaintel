@@ -1,38 +1,55 @@
-
+import 'package:chaintel/utilities/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:chaintel/pages/homePage.dart';
+import 'package:chaintel/utilities/directlogin.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  final Future<FirebaseApp> _fbapp = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
-        fontFamily: 'Raleway'
-      ),
-      home: AnimatedSplashScreen(splash: 'assets/images/logo2.gif',
-        pageTransitionType: PageTransitionType.bottomToTop,
-        duration: 3000,
-        nextScreen: MyHomePage(),
-      ) 
+    return ChangeNotifierProvider(
+      create: (context) => GoogleSignInProvider(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          fontFamily: 'Raleway'
+        ),
+        home: FutureBuilder(
+          future: _fbapp,
+          builder: (context, snapshot) {
+            if(snapshot.hasError) {
+              print('You Have an error! ${snapshot.error.toString()}');
+              return Text('Something Went Wrong!');
+            } else if (snapshot.hasData) {
+              return AnimatedSplashScreen(splash: 'assets/images/logo2.gif',
+                      pageTransitionType: PageTransitionType.bottomToTop,
+                      duration: 3000,
+                        nextScreen: Login(),
+                      ); 
+            }
+            else {
+              return Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
+        )
+        // AnimatedSplashScreen(splash: 'assets/images/logo2.gif',
+        //   pageTransitionType: PageTransitionType.bottomToTop,
+        //   duration: 3000,
+        //   nextScreen: MyHomePage(),
+        // ) 
+      )
     );
   }
 }

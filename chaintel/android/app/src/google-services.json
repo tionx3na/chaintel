@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "184177661267",
+    "project_id": "chaintel-1",
+    "storage_bucket": "chaintel-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184177661267:android:758380d61b61918eaabda6",
+        "android_client_info": {
+          "package_name": "com.company.Chaintel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "184177661267-egm0cs3277vbf1l6ned20uil6g9of2m3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASzSvqzD9L_-DOxFjxcHNmEFp8r930yYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "184177661267-egm0cs3277vbf1l6ned20uil6g9of2m3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
