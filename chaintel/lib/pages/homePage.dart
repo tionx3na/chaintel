@@ -27,7 +27,7 @@ class _MyHomePage extends State<MyHomePage> {
       bottomNavigationBar: CurvedNavigationBar(
           key: _bottomNavigationKey,
           index: 2,
-          height: 60.0,
+          height: 50.0,
           items: <Widget>[
            FaIcon(FontAwesomeIcons.gamepad, color: currentPage == 0 ? Colors.white : Colors.black,),
            FaIcon(FontAwesomeIcons.user, color: currentPage == 1 ? Colors.white : Colors.black,),

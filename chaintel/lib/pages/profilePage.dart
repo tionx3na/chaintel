@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -18,6 +19,8 @@ appBarHome() {
 class _ProfilePage extends State<ProfilePage> {
   @override 
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser!;
+
     return Scaffold(
       appBar: appBarHome(),
       body: Container(
@@ -72,7 +75,7 @@ class _ProfilePage extends State<ProfilePage> {
                                 child: Center(
                                   child: Container(
                                   margin: EdgeInsets.only(top: 70, bottom: 10),
-                                  child: Text("PROFILE",style: TextStyle(color: Colors.white, fontSize: 40.0,  fontWeight: FontWeight.w800,),)
+                                  child: Text(user.displayName!,style: TextStyle(color: Colors.white, fontSize: 40.0,  fontWeight: FontWeight.w800,),)
                                   )
                                  //Row(
                                 //     mainAxisSize: MainAxisSize.min,
@@ -199,7 +202,7 @@ class _ProfilePage extends State<ProfilePage> {
                           decoration: BoxDecoration(
                             color: Colors.black,
                             image: DecorationImage(
-                              image: AssetImage('assets/images/propic.jpg'),
+                              image: NetworkImage(user.photoURL!),//AssetImage('assets/images/propic.jpg'),
                               fit: BoxFit.cover,
                             ),
                             shape: BoxShape.circle 
