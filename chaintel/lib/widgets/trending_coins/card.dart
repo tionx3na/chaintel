@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:chaintel/widgets/top_coins/chart.dart';
-import 'package:chaintel/widgets/top_coins/details.dart';
+import 'package:chaintel/widgets/trending_coins/bottomdetails.dart';
+import 'package:chaintel/widgets/trending_coins/details.dart';
 import 'package:chaintel/constants.dart';
 
-class CardTopCoin extends StatelessWidget {
+class CardTrendingCoin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -17,8 +17,8 @@ class CardTopCoin extends StatelessWidget {
       color: Colors.white,
       child: Column(
         children: [
-          DetailsTopCoin(),
-          ChartTopCoin(data),
+          DetailsTrendCoin(),
+         BottomDetailsTrendCoin(),
         ],
       ),
     );

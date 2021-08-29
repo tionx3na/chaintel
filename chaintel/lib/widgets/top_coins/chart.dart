@@ -17,7 +17,7 @@ class ChartTopCoin extends StatelessWidget {
         ),
         child: Container(
           height: 74.0,
-          width: 130.0,
+          width: 140.0,
           decoration: BoxDecoration(
               gradient: LinearGradient(
             begin: Alignment.topLeft,
