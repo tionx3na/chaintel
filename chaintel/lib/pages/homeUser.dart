@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:chaintel/widgets/top_coins/card.dart';
 import 'package:chaintel/widgets/trending_coins/card.dart';
+import 'package:chaintel/widgets/news_homepage/news_homepage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -174,7 +175,8 @@ class _HomePage extends State<HomePage> {
                                 ),
                                 // Trendinig Coins Card
                                 Container(
-                                  height:MediaQuery.of(context).size.height / 5.4,
+                                  height:
+                                      MediaQuery.of(context).size.height / 5.4,
                                   margin: EdgeInsets.all(10.0),
                                   color: Colors.white,
                                   child: ListView(
@@ -188,6 +190,61 @@ class _HomePage extends State<HomePage> {
                                     ],
                                   ),
                                 ),
+                              ],
+                            ),
+                          ),
+
+                          SizedBox(
+                            height: 5.0,
+                          ),
+
+                          Container(
+                            margin: EdgeInsets.only(top: 25),
+                            // height: MediaQuery.of(context).size.height / 4,
+                            // width: MediaQuery.of(context).size.width,
+                            // color: Colors.black,
+                            child: Column(
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.only(left: 10.0),
+                                      child: Text("News",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontSize: 24,
+                                              fontWeight: FontWeight.w700)),
+                                    ),
+                                    InkWell(
+                                      child: Container(
+                                        margin: EdgeInsets.only(right: 10.0),
+                                        child: Text(
+                                          "See All",
+                                          style: TextStyle(
+                                              color: Colors.blue, fontSize: 20),
+                                        ),
+                                      ),
+                                      onTap: () {
+                                        print("tapped");
+                                      },
+                                    ),
+                                  ],
+                                ),
+                                // Trendinig Coins Card
+                               Column(
+                                 children: [
+                                   for(int i=0;i<5;i++)
+                                   Container(
+                                     margin: EdgeInsets.all(15.0),
+                                     height: MediaQuery.of(context).size.height/5,
+                                     width: MediaQuery.of(context).size.width,
+                                    //  color: Colors.black,
+                                     child: NewsHomePage(),
+                                   )
+                                 ],
+                               )
                               ],
                             ),
                           ),

@@ -1,4 +1,3 @@
-import 'package:chaintel/constants.dart';
 import 'package:flutter/material.dart';
 
 class BottomDetailsTrendCoin extends StatelessWidget {
